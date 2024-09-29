@@ -14,13 +14,21 @@
             @csrf
 
             <div class="mb-4">
-                <label for="team1_id" class="block text-sm font-medium text-gray-700">Team 1 ID</label>
-                <input type="number" name="team1_id" id="team1_id" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+                <label for="team1_id" class="block text-sm font-medium text-gray-700">Team 1</label>
+                <select id="team1_id" name="team1_id" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    @foreach ($teams as $team)
+                        <option value="{{ $team->id }}">{{ $team->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-4">
-                <label for="team2_id" class="block text-sm font-medium text-gray-700">Team 2 ID</label>
-                <input type="number" name="team2_id" id="team2_id" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+                <label for="team2_id" class="block text-sm font-medium text-gray-700">Team 2</label>
+                <select id="team2_id" name="team2_id" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                    @foreach ($teams as $team)
+                        <option value="{{ $team->id }}">{{ $team->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-4">
@@ -90,24 +98,6 @@
             </div>
 
             <div class="mb-4">
-                <label for="doubles_player3_team1" class="block text-sm font-medium text-gray-700">Team 1 Doubles Player 3</label>
-                <select id="doubles_player3_team1" name="doubles_player3_team1" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                    @foreach ($players as $player)
-                        <option value="{{ $player->id }}">{{ $player->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <label for="doubles_player4_team1" class="block text-sm font-medium text-gray-700">Team 1 Doubles Player 4</label>
-                <select id="doubles_player4_team1" name="doubles_player4_team1" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                    @foreach ($players as $player)
-                        <option value="{{ $player->id }}">{{ $player->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="mb-4">
                 <label for="doubles_player1_team2" class="block text-sm font-medium text-gray-700">Team 2 Doubles Player 1</label>
                 <select id="doubles_player1_team2" name="doubles_player1_team2" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                     @foreach ($players as $player)
@@ -119,24 +109,6 @@
             <div class="mb-4">
                 <label for="doubles_player2_team2" class="block text-sm font-medium text-gray-700">Team 2 Doubles Player 2</label>
                 <select id="doubles_player2_team2" name="doubles_player2_team2" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                    @foreach ($players as $player)
-                        <option value="{{ $player->id }}">{{ $player->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <label for="doubles_player3_team2" class="block text-sm font-medium text-gray-700">Team 2 Doubles Player 3</label>
-                <select id="doubles_player3_team2" name="doubles_player3_team2" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                    @foreach ($players as $player)
-                        <option value="{{ $player->id }}">{{ $player->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <label for="doubles_player4_team2" class="block text-sm font-medium text-gray-700">Team 2 Doubles Player 4</label>
-                <select id="doubles_player4_team2" name="doubles_player4_team2" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                     @foreach ($players as $player)
                         <option value="{{ $player->id }}">{{ $player->name }}</option>
                     @endforeach
