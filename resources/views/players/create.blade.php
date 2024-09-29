@@ -33,6 +33,14 @@
                 <label for="mobile_number" class="block text-gray-700">Mobile Number</label>
                 <input type="text" name="mobile_number" id="mobile_number" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
             </div>
+            <div class="mb-4">
+                <label for="team_id" class="block text-sm font-medium text-gray-700">Team</label>
+                <select id="team_id" name="team_id" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        @foreach ($teams as $team)
+                            <option value="{{ $team->id }}">{{ $team->name }}</option>
+                        @endforeach
+                </select>
+            </div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add Player</button>
             <a href="{{ route('players.index') }}" class="bg-gray-300 text-black px-4 py-2 rounded ml-2">Cancel</a>
         </form>

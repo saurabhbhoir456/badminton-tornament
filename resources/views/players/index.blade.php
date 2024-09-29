@@ -1,4 +1,5 @@
 <!-- resources/views/players/index.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +24,7 @@
                     <th class="border-b border-gray-300 px-4 py-2">ID</th>
                     <th class="border-b border-gray-300 px-4 py-2">Name</th>
                     <th class="border-b border-gray-300 px-4 py-2">Mobile Number</th>
+                    <th class="border-b border-gray-300 px-4 py-2">Team</th> <!-- New Team Column -->
                     <th class="border-b border-gray-300 px-4 py-2">Actions</th>
                 </tr>
             </thead>
@@ -32,6 +34,7 @@
                         <td class="border-b border-gray-300 px-4 py-2">{{ $player->id }}</td>
                         <td class="border-b border-gray-300 px-4 py-2">{{ $player->name }}</td>
                         <td class="border-b border-gray-300 px-4 py-2">{{ $player->mobile_number }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2">{{ $player->team ? $player->team->name : 'No Team' }}</td> <!-- Display Team Name -->
                         <td class="border-b border-gray-300 px-4 py-2">
                             <a href="{{ route('players.edit', $player->id) }}" class="text-blue-500">Edit</a>
                             <form action="{{ route('players.destroy', $player->id) }}" method="POST" style="display:inline;">

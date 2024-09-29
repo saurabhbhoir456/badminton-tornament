@@ -11,6 +11,10 @@ class Player extends Model
     protected $fillable = [
         'name',
         'mobile_number',
-        
+        'team_id'
     ];
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }
